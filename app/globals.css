@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sidebar: 222 47% 11%;
+  --sidebar-foreground: 210 40% 98%;
+  --sidebar-accent: 217 91% 60%;
+  --sidebar-primary: 217 91% 60%;
+  --sidebar-border: 0 0% 22%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 210 40% 98%;
+  --border: 0 0% 22%;
+  --muted-foreground: 215 20% 65%;
+  --foreground: 210 40% 98%;
+  --card: 222 47% 9%;
+  --card-foreground: 210 40% 98%;
+  --accent: 217 91% 60% / 0.15;
+  --success: 142 76% 36%;
+  --hot: 0 84% 60%;
+  --warning: 38 92% 50%;
+  --chart-1: 199 89% 48%;
+  --secondary: 215 28% 17%;
+}

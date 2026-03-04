@@ -1,0 +1,28 @@
+{
+  "name": "trendlab-500",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3002",
+    "build": "next build",
+    "snapshot": "node index.js snapshot",
+    "discover": "node discover_uploads.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "@supabase/supabase-js": "^2.98.0",
+    "lucide-react": "^0.460.0",
+    "next": "^15.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.0.0"
+  }
+}

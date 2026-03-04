@@ -201,13 +201,41 @@ export default function HomePage() {
                     <td className="p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] py-2" data-slot="table-cell">
                       <div className="flex items-center gap-3">
                         <div className="size-10 shrink-0 overflow-hidden rounded-md bg-secondary">
-                          <img
-                            src={row.videoId ? `https://img.youtube.com/vi/${row.videoId}/mqdefault.jpg` : "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='180' viewBox='0 0 320 180'%3E%3Crect fill='%23333' width='320' height='180'/%3E%3C/svg%3E"}
-                            alt=""
-                            className="h-full w-full object-cover"
-                          />
+                          {row.videoId ? (
+                            <a
+                              href={`https://www.youtube.com/shorts/${row.videoId}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="block h-full w-full"
+                            >
+                              <img
+                                src={`https://img.youtube.com/vi/${row.videoId}/mqdefault.jpg`}
+                                alt=""
+                                className="h-full w-full object-cover"
+                              />
+                            </a>
+                          ) : (
+                            <img
+                              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='180' viewBox='0 0 320 180'%3E%3Crect fill='%23333' width='320' height='180'/%3E%3C/svg%3E"
+                              alt=""
+                              className="h-full w-full object-cover"
+                            />
+                          )}
                         </div>
-                        <span className="text-sm font-medium text-card-foreground line-clamp-1 max-w-[240px]">{row.title}</span>
+                        {row.videoId ? (
+                          <a
+                            href={`https://www.youtube.com/shorts/${row.videoId}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="text-sm font-medium text-card-foreground line-clamp-1 max-w-[240px] hover:underline focus:outline-none focus:underline"
+                          >
+                            {row.title}
+                          </a>
+                        ) : (
+                          <span className="text-sm font-medium text-card-foreground line-clamp-1 max-w-[240px]">{row.title}</span>
+                        )}
                       </div>
                     </td>
                     <td className="p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-xs font-medium text-card-foreground" data-slot="table-cell">{row.views}</td>
